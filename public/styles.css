@@ -1,0 +1,348 @@
+
+
+body {
+  /* background: linear-gradient(5deg, rgb(0, 99, 99), rgb(0, 66, 99)); */
+  background-image: url('../static/img/main-background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* fixa a imagem durante o scroll */
+  min-height: 100vh;
+  font-family: georgia, serif;
+}
+
+input, textarea {
+  outline: none;
+}
+
+.flex {
+  display: flex;
+}
+.column {
+  flex-flow: column wrap;
+}
+.row {
+  flex-flow: row wrap;
+}
+.going-left {
+  text-align: left;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.going-center {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.going-right {
+  text-align: right;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.gap {
+  gap: .5rem;
+}
+
+#activity-engine {
+  background: rgb(205, 167, 86);
+  border: #222 solid 1px;
+  cursor: pointer; 
+  padding: .5rem;
+  position: fixed;
+  top: 0;
+  left: .3rem;
+}
+
+.btn-post-edit {
+  background: linear-gradient(yellow, #ff9);
+  border: #222 solid 1px;
+  border-radius: .3rem;
+  cursor: pointer;
+  height: 5vh;
+  margin-right: .5rem;
+  outline: none;
+  padding: .3rem .7rem;
+  position: relative;
+  left: -.5rem;
+  top: .5rem;
+  transition: all linear .5s;
+}
+
+.btn-post-edit:hover {
+  background: orangered;
+  box-shadow: 0 0 .5rem orangered;
+}
+
+.btn-post-del, .btn-comment-del {
+  background: linear-gradient(yellow, #ff9);
+  border: #222 solid 1px;
+  border-radius: .2rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  height: 5vh;
+  position: relative;
+  left: -.5rem;
+  top: .5rem;
+  transition: all linear .5s;
+}
+
+.btn-post-del:hover, .btn-comment-del:hover {
+  background: #222;
+  box-shadow: 0 0 1.5rem black;
+}
+
+.comment {
+  background: linear-gradient(-5deg, rgba(255, 255, 100, .5), rgba(255, 255, 153, .5), white);
+  border: black solid 1px;
+  border-radius: .5rem;
+  margin: 1rem 0;
+  padding: .5rem;
+}
+
+.comment-counter {
+  background: #222;
+  border: #ff9 solid 1px;
+  color: #ff9;
+  margin: 0 .3rem;
+  padding: .2rem 2rem;
+  text-shadow: 0 0 .3rem white;
+}
+
+.comment-meta {
+  text-align: left;
+}
+
+.comment-meta .who {
+  background: rgb(0, 199, 99);
+  border: #222 solid 1px;
+  border-radius: .2rem;
+  display: inline-block;
+  font-size: .8rem;
+  margin: .5rem 1rem;
+  padding: .2rem;
+  text-align: left;
+}
+
+.comments {
+  /* border: #ff9 solid 1px; */
+  border-radius: .2rem;
+  margin: .5rem;
+  padding: .5rem;
+}
+
+.comment-item {
+  background: #ffb;
+  border: #222 solid 1px;
+  border-radius: .3rem;
+  color: #222;
+  display: inline-block;
+  padding: .1rem .5rem;
+  margin: 0;
+}
+
+.comment-itself {
+  color: black;
+  letter-spacing: 1px;
+  margin: 0 1rem;
+  text-align: left;
+  text-shadow: 0 0 .1rem black;
+}
+
+#container {
+  min-height: 100vh;
+  margin: 0 auto;
+  width: 70%;
+}
+
+#create-post-admin-form {
+  background: linear-gradient(5deg, #ff9, rgb(205, 167, 86)); 
+  border: #555 solid 1px;
+  border-radius: .5rem;
+  color: #222;
+  opacity: .8;
+  padding: .3rem;
+  /* width: 40%; */
+}
+
+#edit-post-admin-form {
+  background: linear-gradient(5deg, #ff9, rgb(33, 66, 99));
+  border: #555 solid 1px;
+  border-radius: .5rem;
+  color: #222;
+  padding: .3rem;
+  /* width: 40%; */
+}
+
+#create-post-admin-form input, #create-post-admin-form textarea {
+  background: rgb(205, 167, 86);
+  border: #ff9 solid 1px;
+  padding: .5rem;
+}
+
+#edit-post-admin-form input, #edit-post-admin-form textarea {
+  background: #ff9;
+  border: #222 solid 1px;
+  padding: .5rem;
+}
+
+#create-post-admin-form textarea {
+  color: black;
+  text-shadow: 0 0 .5rem white;
+}
+
+.emoji {
+  background: linear-gradient(white, #ff9);
+  border: #222 solid 1px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin: .2rem;
+  padding: .2rem;
+}
+
+.feat-loading {
+  color: #ff9;
+  font-size: 3rem;
+  font-style: italic;
+  text-align: center;
+  text-shadow: 0 0 .3rem #222;
+}
+
+.feat-vanished {
+  display: none;
+}
+
+.mg-left {
+  margin-left: .5rem;
+}
+
+.post-frame {
+  background: linear-gradient(5deg, #222, rgb(0, 99, 99));
+  border: #222 solid 1px;
+  border-radius: .2rem;
+  margin: 5rem 5%;
+  opacity: .7;
+}
+
+.post-content {
+  color: #222;
+  letter-spacing: 1px;
+  line-height: 4vh;
+  margin: 1rem;
+  text-align: justify;
+  text-shadow: 0 0 .5rem #ff9;
+  width: 60%;
+
+  background: linear-gradient(-5deg, rgb(255, 255, 100), #ff9);
+  padding: 1rem;
+  border-radius: .3rem;
+  border: #222 solid 1px;
+}
+
+.post-meta .who {
+  background: #ff9;
+  border: #222 solid 1px;
+  border-radius: .2rem;
+  display: inline-block;
+  font-size: .8rem;
+  margin: 0 1rem;
+  padding: .2rem;
+}
+
+.comment-text-area {
+  /* background: linear-gradient(rgb(0, 99, 99), #222); */
+  background: linear-gradient(-5deg, rgb(255, 255, 100), #ff9);
+  border: #222 solid 1px;
+  border-radius: .2rem;
+  /* box-shadow: 0 0 .2rem mediumseagreen; */
+  height: 10vh;
+  margin: .5rem 1rem;
+  width: 50%;
+}
+
+#anchor {
+  background: rgb(205, 167, 86);
+  border-radius: 1rem;
+  cursor: pointer;
+  color: black;
+  font-size: 3rem;
+  position: fixed;
+  text-decoration: none;
+  right: 1rem;
+}
+
+.post-text-area {
+  width: 90%;
+}
+
+.post-title {
+  background: linear-gradient(50deg, #777, #ff9);
+  border: #222 solid 1px;
+  border-radius: .3rem;
+  padding: .2rem;
+  margin: .5rem 1rem;
+  width: 70%;
+}
+
+.post-panel {
+  /* background: rgba(0, 111, 111, .5); */
+  background: linear-gradient(-5deg, rgb(255, 255, 100), #ff9);
+  border: #222 solid 1px;
+  border-radius: .5rem;
+  margin: 0 1rem;
+  padding: .5rem;
+  width: 15%;
+}
+
+.post-panel .like {
+  background: transparent;
+  border: transparent solid .1px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0;
+  transition: linear .5s;
+}
+
+.post-panel .like:hover {
+  transform: rotate(15deg);
+}
+
+.feat-liked {
+  background: crimson;
+  border: transparent solid .1px;
+  border-radius: 50%;
+  box-shadow: 0 0 .5rem crimson;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0;
+  transition: linear .5s;
+
+  display: relative;
+}
+
+#filtering-form {
+    background: linear-gradient(5deg, #ff9, rgb(205, 167, 86));
+    border: #555 solid 1px;
+    border-radius: .5rem;
+    color: #222;
+    line-height: 1.5rem;
+    opacity: .8;
+    padding: .3rem;
+    margin: .5rem;
+    height: 40vh;
+    width: 40vh;
+}
+
+.submit-comment-box {
+  margin: 0 1rem;
+}
+
+.vanished {
+  display: none;
+}
+
+.welcome {
+  color: rgb(205, 167, 86);
+  font-family: 'Cambria';
+  letter-spacing: 2px;
+  text-shadow: 0 0 .3rem black;
+}

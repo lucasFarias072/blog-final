@@ -1,0 +1,37 @@
+
+
+npm install prisma @prisma/client
+npm install sqlite3  # esse foi usado       
+npm install mysql2         
+npm install pg  
+npx prisma init
+
+--o Alterar .env
+--o Comentar linha padrão postgres e configurar a do sqlite3
+--o Anexar o esquema em "prisma/schema.prisma"
+
+npx prisma migrate dev --name init
+npx prisma generate
+npx prisma db push
+
+npm install express cors
+
+npx prisma studio
+
+--o Atualização
+modelo    || Post
+alteração || like      Int       @default(0)
+
+npx prisma migrate dev --name add-like-field-default-zero
+
+--o Atualização
+modelo    || Post
+alteração || liked     Boolean   @default(false)
+
+npx prisma migrate dev --name add-liked-boolean-field
+
+
+--o Atualização (mudança para dados históricos)
+npx prisma migrate dev --name add-civilization-boolean-field
+npx prisma migrate dev --name add-figure-boolean-field
+npx prisma migrate dev --name add-continent-field

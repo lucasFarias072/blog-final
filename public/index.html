@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog História Antiga</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="page-rooftop"></div>
+    <p id="activity-engine">habilitar atividade 🔴</p> <!-- 🟢 -->
+    <a id="anchor" href="#page-rooftop">⤴</a>
+
+    <div class="flex row going-center">
+        <h1 class="welcome">⚜️ Boas-vindas ao Blog da História Antiga ⚔️</h1>
+    </div>
+    
+    <div id="container" class="flex row going-center">
+        
+        <!-- Criação de postagem -->
+        <div id="form-for-new-post">
+            <form id="post-form">
+                <div id="create-post-admin-form" class="flex column going-left gap">
+                    <h2>Nova Postagem</h2>
+                    <label for="title">Título para a postagem</label>
+                    <input type="text" id="title" required autofocus>
+                    <label for="author">Nome do autor</label>
+                    <input type="text" id="author" required>
+                    <label for="content">Conteúdo da postagem</label>
+                    <textarea class="post-text-area" id="content" required></textarea>
+
+                    <div class="flex row going-left gap">
+                        <span>Sobre o que é a informação?</span>
+                        <div class="flex column going-left">
+                            <input type="radio" id="civilization" name="concept" value="civilization">
+                            <label for="civilization">Civilização</label>
+
+                            <input type="radio" id="figure" name="concept" value="figure">
+                            <label for="figure">Figura histórica</label>
+                        </div>
+                    </div>
+
+                    <div class="flex going-left gap">
+                        <select id="continents">
+                            <option value="void">selecione o continente</option>
+                            <option value="af">África</option>
+                            <option value="am">América</option>
+                            <option value="an">Antártida</option>
+                            <option value="as">Ásia</option>
+                            <option value="eu">Europa</option>
+                            <option value="oc">Oceania</option>
+                        </select>
+                    </div>
+
+                    <button type="submit">criar postagem</button>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Filtragem de postagem -->
+        <div id="filtering-form">
+            <h2>Filtragem</h2>
+            <div class="flex column going-center">
+                
+                <div class="flex column going-left gap">
+                    <span>Qual o tópico?</span>
+                    
+                    <div class="flex row going-left">
+                        <input type="radio" id="civilization-query" name="concept-query" value="civilization">
+                        <label for="civilization">Civilização</label>
+                    </div>
+
+                    <div class="flex row going-left">
+                        <input type="radio" id="figure-query" name="concept-query" value="figure">
+                        <label for="figure">Figura histórica</label>
+                    </div>
+                </div>
+
+                <div class="flex column going-left gap">
+                    <span>Qual o continente?</span>
+                    <select id="continents-query">
+                        <option value="void">selecione o continente</option>
+                        <option value="af">África</option>
+                        <option value="am">América</option>
+                        <option value="an">Antártida</option>
+                        <option value="as">Ásia</option>
+                        <option value="eu">Europa</option>
+                        <option value="oc">Oceania</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Atualização de postagem (escondida, surge por gatilho) -->
+        <div id="form-for-edit-post" class="vanished">
+            <form id="edit-post-form">
+                <div id="edit-post-admin-form" class="flex column going-left gap">
+                    <h2>Editar Postagem</h2>
+                    <input type="hidden" id="edit-post-id"> <!-- ID do post sendo editado -->
+                    
+                    <label for="edit-title">Título para a postagem</label>
+                    <input type="text" id="edit-title" required>
+                    
+                    <label for="edit-author">Nome do autor</label>
+                    <input type="text" id="edit-author" required>
+                    
+                    <label for="edit-content">Conteúdo da postagem</label>
+                    <textarea class="post-text-area" id="edit-content" required></textarea>
+
+                    <div class="flex row going-left gap">
+                        <span>Sobre o que é a informação?</span>
+                        <div class="flex column going-left">
+                            <input type="radio" id="edit-civilization" name="edit-concept" value="civilization">
+                            <label for="edit-civilization">Civilização</label>
+
+                            <input type="radio" id="edit-figure" name="edit-concept" value="figure">
+                            <label for="edit-figure">Figura histórica</label>
+                        </div>
+                    </div>
+
+                    <div class="flex going-left gap">
+                        <select id="edit-continents">
+                            <option value="void">selecione o continente</option>
+                            <option value="af">África</option>
+                            <option value="am">América</option>
+                            <option value="an">Antártida</option>
+                            <option value="as">Ásia</option>
+                            <option value="eu">Europa</option>
+                            <option value="oc">Oceania</option>
+                        </select>
+                    </div>
+
+                    <button type="submit">alterar</button>
+                    <button type="button" onclick="cancelEdit()">cancelar</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Listagem dos posts -->
+        <div id="posts"></div>
+
+        <div id="posts-warner"></div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
