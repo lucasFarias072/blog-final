@@ -113,11 +113,14 @@ input, textarea {
 }
 
 .comment-meta .who {
-  background: rgb(0, 199, 99);
+  /* background: rgb(0, 199, 99); */
+  background: linear-gradient(5deg, aqua, rgb(205, 167, 86));
   border: #222 solid 1px;
   border-radius: .2rem;
+  color: black;
   display: inline-block;
-  font-size: .8rem;
+  font-size: .9rem;
+  letter-spacing: 2px;
   margin: .5rem 1rem;
   padding: .2rem;
   text-align: left;
